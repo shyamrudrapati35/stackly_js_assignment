@@ -1138,3 +1138,254 @@
 
 // // Print the completed cart
 // console.log(completedCart);
+
+//-------------------------------------------
+
+//8-7-26 *** js assignment ***
+
+//-------------------------------------------
+
+//task-1
+
+// let employees = [
+//   {
+//     name: "Aarav Sharma",
+//     age: 25,
+//     email: "aarav.sharma@company.com",
+//     role: "Software Developer",
+//     salary: 48000,
+//     experience: 2
+//   },
+//   {
+//     name: "Priya Reddy",
+//     age: 28,
+//     email: "priya.reddy@company.com",
+//     role: "UI/UX Designer",
+//     salary: 55000,
+//     experience: 4
+//   },
+//   {
+//     name: "Rahul Verma",
+//     age: 32,
+//     email: "rahul.verma@company.com",
+//     role: "Project Manager",
+//     salary: 120000,
+//     experience: 9
+//   },
+//   {
+//     name: "Sneha Patel",
+//     age: 27,
+//     email: "sneha.patel@company.com",
+//     role: "QA Engineer",
+//     salary: 52000,
+//     experience: 3
+//   },
+//   {
+//     name: "Vikram Singh",
+//     age: 35,
+//     email: "vikram.singh@company.com",
+//     role: "DevOps Engineer",
+//     salary: 95000,
+//     experience: 8
+//   },
+//   {
+//     name: "Neha Gupta",
+//     age: 30,
+//     email: "neha.gupta@company.com",
+//     role: "HR Manager",
+//     salary: 65000,
+//     experience: 6
+//   },
+//   {
+//     name: "Karan Mehta",
+//     age: 40,
+//     email: "karan.mehta@company.com",
+//     role: "Technical Lead",
+//     salary: 140000,
+//     experience: 12
+//   },
+//   {
+//     name: "Ananya Rao",
+//     age: 24,
+//     email: "ananya.rao@company.com",
+//     role: "Business Analyst",
+//     salary: 50000,
+//     experience: 2
+//   },
+//   {
+//     name: "Rohit Kumar",
+//     age: 29,
+//     email: "rohit.kumar@company.com",
+//     role: "Backend Developer",
+//     salary: 78000,
+//     experience: 5
+//   },
+//   {
+//     name: "Meera Iyer",
+//     age: 38,
+//     email: "meera.iyer@company.com",
+//     role: "Data Scientist",
+//     salary: 110000,
+//     experience: 10
+//   }
+// ];
+
+//map method
+// employees.map((a) => {
+//   console.log(a.name)
+// })
+
+//filter method
+// let salary = employees.filter( (a) => {
+//   return a.salary > 50000
+// })
+// console.log(salary)
+
+//find method
+// let details = employees.find((a)=>{
+//   return a.salary > 100000
+// })
+// console.log(details)
+
+//reduce method
+// let totalSalary = employees.reduce((acc, a)=> {
+//   return acc+ a.salary
+// },0 )
+// console.log(totalSalary)
+
+//-------------------------------------------
+
+//task-2
+
+// let electronics = ["Laptop", "Mouse", "Keyboard"];
+// let accessories = ["Webcam", "Speaker"];
+
+// // Merge two arrays using the spread operator
+// let cart = [...electronics, ...accessories];
+
+// console.log("Merged Cart:", cart);
+
+// // Add a new product without changing the original array
+// let updatedCart = [...cart, "Monitor"];
+
+// console.log("Updated Cart:", updatedCart);
+// console.log("Original Cart:", cart);
+
+// // Checkout function using the rest operator
+// function checkout(...products) {
+//   console.log("Products:", products);
+//   console.log("Total Products:", products.length);
+// }
+
+// // Call the function
+// checkout(...updatedCart);
+
+//-------------------------------------------
+
+//task-3
+
+// let student = {
+//   id: 101,
+//   name: "Rahul Kumar",
+//   age: 20,
+//   gender: "Male",
+//   department: "Computer Science",
+//   year: "3rd Year",
+//   section: "A",
+//   email: "rahul.kumar@college.edu",
+//   phone: "9876543210",
+//   address: "Hyderabad",
+//   marks: [85, 92, 78, 88, 95, 81]
+// };
+
+// //Extract name, department, and marks using object destructuring.
+// let {name, department, marks} = student
+
+// //Extract the first three subject marks using array destructuring.
+// let [a,b,c] = marks
+
+// //print
+// console.log(name)
+// console.log(department)
+// console.log(a+b+c)
+// console.log((a+b+c)/3)
+
+//-------------------------------------------
+
+//task-4
+
+// Product Name
+// let product = 'Wireless Bluetooth Headphones';
+
+// // User Search Input
+// let search = '   Bluetooth   ';
+
+// // Remove extra spaces
+// let keyword = search.trim();
+
+// // Convert to lowercase
+// keyword = keyword.toLowerCase();
+
+// console.log('Search Keyword:', keyword);
+
+// // Check if the product contains the search keyword
+// if (product.toLowerCase().includes(keyword)) {
+//   console.log('Product Found');
+
+//   let highlightedProduct = product.replace(/Bluetooth/i, '**Bluetooth**');
+
+//   console.log('Highlighted Product:', highlightedProduct);
+// } else {
+//   console.log('Product Not Found');
+// }
+
+//-------------------------------------------
+
+//task-5
+
+// Movie List
+// let movies = ["Avatar", "Inception", "Titanic", "Interstellar"];
+
+// console.log("Original Movies:", movies);
+
+// // Add new movies using push()
+// movies.push("Jawan");
+// movies.push("Leo");
+
+// console.log("After push():", movies);
+
+// // Remove the last movie using pop()
+// movies.pop();
+
+// console.log("After pop():", movies);
+
+// // Remove the first movie using shift()
+// movies.shift();
+
+// console.log("After shift():", movies);
+
+// // Add a featured movie at the beginning using unshift()
+// movies.unshift("KGF");
+
+// console.log("After unshift():", movies);
+
+// // Replace one movie using splice()
+// movies.splice(2, 1, "Pushpa");
+
+// console.log("After splice():", movies);
+
+// // Movie ratings
+// let ratings = [8.5, 9.2, 7.8, 8.9, 9.5];
+
+// // Sort ratings in descending order
+// ratings.sort((a, b) => b - a);
+
+// console.log("Ratings (Descending):", ratings);
+
+// // Check whether a movie exists using includes()
+// let movieName = "Pushpa";
+
+// console.log("Movie Exists:", movies.includes(movieName));
+
+// // Final Movie List
+// console.log("Final Movies:", movies);
