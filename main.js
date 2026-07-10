@@ -1035,4 +1035,106 @@
 
 //task-12
 
+// let ids = [101, 102, 103, 104, 105];
 
+// ids.splice(2, 2, 501, 502);
+
+// console.log(ids);
+
+//----------------------------------
+
+//task-13
+
+// let price = [5000, 250, 700, 12000, 50];
+// price.sort((a, b) => a - b);
+// console.log(price);
+
+//----------------------------------
+
+//task-14
+
+// let data = ['Electronics', ['Mobiles', ['Samsung', 'Apple']]];
+
+// let [a, [b, [c, d]]] = data;
+
+// console.log(a, b, c, d);
+
+//---------------------------------
+
+//task-15
+
+// let developers = ['John', 'David'];
+
+// let designers = ['Ram', 'Kiran'];
+
+// console.log([...developers,...designers])
+
+//---------------------------------
+
+//task-16
+
+// let calculateSalary = (a, b) => a + b;
+
+// let total = calculateSalary(10,5)
+
+// console.log(total)
+
+//---------------------------------
+
+//task-17
+
+// if (true) {
+//   var a = 12;
+//   let b = 13;
+//   const c = 14;
+// }
+
+// we can only access the var outside the if block since its a global variable
+
+//---------------------------------
+
+//task-18
+
+// let orders = ['Pizza', 'Burger', 'Pizza', 'Sandwich', 'Pizza'];
+// let name = 'Pizza';
+// console.log(orders.indexOf(name));
+// console.log(orders.lastIndexOf(name));
+
+//---------------------------------
+
+//task-19
+
+// let items = [1, 2, [3, 4, [5, 6]]];
+
+// let newArray = items.flat(3)
+
+// console.log(newArray)
+
+//---------------------------------
+
+//task-20
+
+// let cart = ["Mouse", "Keyboard"];
+
+// // 1. Add "Monitor" using push()
+// cart.push("Monitor");
+
+// // 2. Add "Laptop" at the beginning
+// cart.unshift("Laptop");
+
+// // 3. Remove "Keyboard" using splice()
+// let index = cart.indexOf("Keyboard");
+// if (index !== -1) {
+//   cart.splice(index, 1);
+// }
+
+// // 4. Check whether "Mouse" exists
+// console.log(cart.includes("Mouse")); // true
+
+// // 5. Merge with accessories using the spread operator
+// let accessories = ["Webcam", "Speaker"];
+
+// let completedCart = [...cart, ...accessories];
+
+// // Print the completed cart
+// console.log(completedCart);
