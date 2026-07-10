@@ -1389,3 +1389,112 @@
 
 // // Final Movie List
 // console.log("Final Movies:", movies);
+
+//---------------------------------------
+
+//9-7-26 *** js assignment ***
+
+//---------------------------------------
+
+//task-1
+
+// // Employee Date of Birth
+// let dob = new Date("2002-05-15");
+
+// // Current Date
+// let today = new Date();
+
+// // Calculate Age
+// let age = today.getFullYear() - dob.getFullYear();
+
+// // Check if birthday has occurred this year
+// let monthDifference = today.getMonth() - dob.getMonth();
+
+// if (
+//   monthDifference < 0 ||
+//   (monthDifference === 0 && today.getDate() < dob.getDate())
+// ) {
+//   age--;
+// }
+
+// // Print Age
+// console.log("Employee Age:", age, "Years");
+
+//-----------------------------------------
+
+//task-2
+
+// Create today's date
+// let appointment = new Date();
+
+// console.log("Today's Appointment:", appointment);
+
+// // Update the appointment
+// appointment.setFullYear(2027); // Year
+// appointment.setMonth(11);      // December (0 = January, 11 = December)
+// appointment.setDate(15);       // Date
+// appointment.setHours(10);      // 10 AM
+// appointment.setMinutes(30);    // 30 Minutes
+
+// // Print the updated appointment
+// console.log("Updated Appointment:", appointment);
+
+//----------------------------------------
+
+//task-3
+
+// Current Date and Time
+// let now = new Date();
+
+// // India Time
+// let indiaTime = now.toLocaleString("en-IN", {
+//   timeZone: "Asia/Kolkata"
+// });
+
+// // New York Time
+// let newYorkTime = now.toLocaleString("en-US", {
+//   timeZone: "America/New_York"
+// });
+
+// // Tokyo Time
+// let tokyoTime = now.toLocaleString("en-JP", {
+//   timeZone: "Asia/Tokyo"
+// });
+
+// // Print the times
+// console.log("India Time:", indiaTime);
+// console.log("New York Time:", newYorkTime);
+// console.log("Tokyo Time:", tokyoTime);
+
+//-------------------------------------------
+
+//task-4
+
+// // Get today's date (Purchase Date)
+// let purchaseDate = new Date();
+
+// // Create a copy for the warranty expiry date
+// let warrantyExpiry = new Date(purchaseDate);
+
+// // Add 2 years
+// warrantyExpiry.setFullYear(warrantyExpiry.getFullYear() + 2);
+
+// // Print the dates
+// console.log("Purchase Date :", purchaseDate.toDateString());
+// console.log("Warranty Expiry :", warrantyExpiry.toDateString());
+
+//--------------------------------------------
+
+//task-5
+
+// Function to display the current time
+// function showTime() {
+//   let currentTime = new Date();
+
+//   let time = currentTime.toLocaleTimeString();
+
+//   console.log(time);
+// }
+
+// // Display the time every second
+// setInterval(showTime, 1000);
