@@ -1498,3 +1498,314 @@
 
 // // Display the time every second
 // setInterval(showTime, 1000);
+
+//------------------------------------------------------
+
+//15-7-26 *** DOM assignment ***
+
+//-----------------------------------------------------
+
+//task-1
+
+const products = [
+  { id: 1, title: 'Laptop' },
+  { id: 2, title: 'Mobile Phone' },
+  { id: 3, title: 'Headphones' },
+  { id: 4, title: 'Smart Watch' },
+  { id: 5, title: 'Keyboard' },
+];
+
+const searchInput = document.getElementById('searchInput');
+const productList = document.getElementById('productList');
+
+function displayProducts(productArray) {
+  productList.innerHTML = '';
+
+  if (productArray.length === 0) {
+    productList.innerHTML = '<p>No Products Found</p>';
+    return;
+  }
+
+  productArray.forEach((product) => {
+    const div = document.createElement('div');
+    div.textContent = product.title;
+    productList.appendChild(div);
+  });
+}
+
+// Initial display
+displayProducts(products);
+
+// Search
+searchInput.addEventListener('input', () => {
+  const searchText = searchInput.value.toLowerCase();
+
+  const filteredProducts = products.filter((product) =>
+    product.title.toLowerCase().includes(searchText)
+  );
+
+  displayProducts(filteredProducts);
+});
+
+//---------------------------------------------------
+
+//task-2
+
+const itemData = [
+  { id: 1, title: 'T-Shirt', category: "men's clothing" },
+  { id: 2, title: 'Dress', category: "women's clothing" },
+  { id: 3, title: 'Gold Ring', category: 'jewelery' },
+  { id: 4, title: 'Laptop', category: 'electronics' },
+  { id: 5, title: 'Jeans', category: "men's clothing" },
+  { id: 6, title: 'Necklace', category: 'jewelery' },
+  { id: 7, title: 'Mobile Phone', category: 'electronics' },
+  { id: 8, title: 'Skirt', category: "women's clothing" },
+];
+
+const output = document.getElementById('productListData');
+const categoryBtns = document.querySelectorAll('.category');
+
+function showItems(data) {
+  output.innerHTML = '';
+
+  data.forEach((item) => {
+    const card = document.createElement('div');
+
+    card.innerHTML = `
+      <h4>${item.title}</h4>
+      <p>${item.category}</p>
+    `;
+
+    output.appendChild(card);
+  });
+}
+
+// Display all products initially
+showItems(itemData);
+
+// Filter by category
+categoryBtns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const selectedCategory = btn.dataset.category;
+
+    if (selectedCategory === 'all') {
+      showItems(itemData);
+    } else {
+      const result = itemData.filter((item) => {
+        return item.category === selectedCategory;
+      });
+
+      showItems(result);
+    }
+  });
+});
+
+//---------------------------------------------------
+
+//task-3
+
+const catalog = [
+  { id: 1, title: "Laptop", price: 60000 },
+  { id: 2, title: "Mobile", price: 25000 },
+  { id: 3, title: "Headphones", price: 2000 },
+  { id: 4, title: "Smart Watch", price: 5000 },
+  { id: 5, title: "Keyboard", price: 1500 }
+];
+
+const container = document.getElementById("productListItems");
+const ascendingBtn = document.getElementById("lowHigh");
+const descendingBtn = document.getElementById("highLow");
+
+function renderCatalog(list) {
+  container.innerHTML = "";
+
+  list.forEach(product => {
+    const element = document.createElement("div");
+
+    element.innerHTML = `
+      <h3>${product.title}</h3>
+      <p>₹${product.price}</p>
+    `;
+
+    container.appendChild(element);
+  });
+}
+
+// Initial display
+renderCatalog(catalog);
+
+// Low → High
+ascendingBtn.addEventListener("click", () => {
+  const ascendingList = [...catalog].sort((first, second) => first.price - second.price);
+  renderCatalog(ascendingList);
+});
+
+// High → Low
+descendingBtn.addEventListener("click", () => {
+  const descendingList = [...catalog].sort((first, second) => second.price - first.price);
+  renderCatalog(descendingList);
+});
+
+//-------------------------------------------------
+
+//task-4
+
+const inventory = [
+  {
+    id: 1,
+    title: "Laptop",
+    description: "High performance laptop.",
+    price: 650,
+    rating: 4.5,
+    category: "electronics",
+    image: "https://unsplash.com/photos/macbook-pro-on-top-of-brown-table-1SAnrIxw5OY"
+  },
+  {
+    id: 2,
+    title: "T-Shirt",
+    description: "Comfortable cotton t-shirt.",
+    price: 25,
+    rating: 4.2,
+    category: "men's clothing",
+    image: "https://unsplash.com/photos/a-white-t-shirt-hanging-from-a-tree-2WeAYFTG69A"
+  }
+];
+
+const productBox = document.getElementById("products");
+const modal = document.getElementById("popup");
+const closeBtn = document.getElementById("closeBtn");
+
+function loadProducts() {
+  productBox.innerHTML = "";
+
+  inventory.forEach(item => {
+    productBox.innerHTML += `
+      <div>
+        <img src="${item.image}" width="120" data-id="${item.id}">
+        <h3>${item.title}</h3>
+        <p>$${item.price}</p>
+      </div>
+    `;
+  });
+}
+
+loadProducts();
+
+// Event Delegation
+productBox.addEventListener("click", (event) => {
+  if (event.target.tagName === "IMG") {
+
+    const productId = Number(event.target.dataset.id);
+
+    const selectedItem = inventory.find(product => product.id === productId);
+
+    document.getElementById("popupImage").src = selectedItem.image;
+    document.getElementById("popupTitle").textContent = selectedItem.title;
+    document.getElementById("popupDescription").textContent = selectedItem.description;
+    document.getElementById("popupPrice").textContent = selectedItem.price;
+    document.getElementById("popupRating").textContent = selectedItem.rating;
+    document.getElementById("popupCategory").textContent = selectedItem.category;
+
+    modal.style.display = "block";
+  }
+});
+
+// Close Modal
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+//----------------------------------------------------
+
+//task-5
+
+//-----------------------------------------------------
+
+const productListTaken = [
+    { id: 1, name: "Laptop", price: 50000 },
+    { id: 2, name: "Mobile", price: 20000 },
+    { id: 3, name: "Headphones", price: 3000 }
+];
+
+let cartList = [];
+
+
+document.getElementById("lul").innerHTML = productListTaken.map(product => `
+    <div>
+        <h3>${product.name}</h3>
+        <p>Price: ₹${product.price}</p>
+        <button onclick="addCart(${product.id})">
+            Add to Cart
+        </button>
+    </div>
+`).join("");
+
+
+
+function addCart(productId) {
+
+    let product = productListTaken.find(item => item.id === productId);
+
+    let cartItem = cartList.find(item => item.id === productId);
+
+
+    if(cartItem){
+        cartItem.quantity++;
+    }
+    else{
+        cartList.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            quantity: 1
+        });
+    }
+
+    showCart();
+}
+
+
+
+function showCart(){
+
+    let cartData = document.getElementById("cart");
+
+    cartData.innerHTML = cartList.map(item => `
+        <tr>
+            <td>${item.name}</td>
+            <td>${item.quantity}</td>
+            <td>₹${item.price * item.quantity}</td>
+        </tr>
+    `).join("");
+
+
+    let itemCount = cartList.reduce((total,item)=>{
+        return total + item.quantity;
+    },0);
+
+
+    document.getElementById("count").innerText = itemCount;
+
+
+    let grandAmount = cartList.reduce((total,item)=>{
+        return total + (item.price * item.quantity);
+    },0);
+
+
+    document.getElementById("total").innerText = grandAmount;
+
+}
+
+
+
+// findIndex example
+function removeCart(productId){
+
+    let cartIndex = cartList.findIndex(item => item.id === productId);
+
+    if(cartIndex !== -1){
+        cartList.splice(cartIndex,1);
+        showCart();
+    }
+
+}

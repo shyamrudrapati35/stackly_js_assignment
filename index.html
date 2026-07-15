@@ -1,22 +1,111 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    *{
-      text-align: center;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        text-align: center;
+      }
 
-    .task9 > input, button{
-      margin-bottom: 10px;
-    }
-  </style>
-</head>
-<body>
-  <h2>shyam js assignment</h2>
-  <hr>
-  <script src="./main.js"></script>
-</body>
+      .task9 > input,
+      button {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>shyam js assignment</h2>
+    <hr />
+    <h3>DOM manuplation assignment</h3>
+    <!-- task-1 -->
+    <p style="text-decoration: underline 2px">task-1</p>
+    <section>
+      <h2>Product Search</h2>
+
+      <input type="text" id="searchInput" placeholder="Search Product" />
+
+      <div id="productList"></div>
+    </section>
+    <hr />
+    <!-- task-2 -->
+    <p style="text-decoration: underline 2px">task-2</p>
+    <section>
+      <h2>Category Filter</h2>
+
+      <button class="category" type="button" data-category="all">All</button>
+      <button class="category" type="button" data-category="men's clothing">Men's Clothing</button>
+      <button class="category" type="button" data-category="women's clothing">
+        Women's Clothing
+      </button>
+      <button class="category" type="button" data-category="jewelery">Jewelery</button>
+      <button class="category" type="button" data-category="electronics">Electronics</button>
+
+      <div id="productListData"></div>
+    </section>
+    <hr />
+
+    <!-- task-3 -->
+    <p style="text-decoration: underline 2px">task-3</p>
+    <section>
+      <h2>Price Sorting</h2>
+
+      <button type="button" id="lowHigh">Low → High</button>
+      <button type="button" id="highLow">High → Low</button>
+
+      <div id="productListItems"></div>
+    </section>
+    <hr />
+
+    <!-- task-4 -->
+    <p style="text-decoration: underline 2px">task-4</p>
+    <section>
+      <div id="products"></div>
+      <div id="popup" style="display: none">
+        <div id="popupContent">
+          <button type="button" id="closeBtn">X</button>
+
+          <img alt="_image" id="popupImage" width="200" />
+
+          <h2 id="popupTitle"></h2>
+
+          <p id="popupDescription"></p>
+
+          <p><b>Price:</b> $<span id="popupPrice"></span></p>
+
+          <p><b>Rating:</b> <span id="popupRating"></span></p>
+
+          <p><b>Category:</b> <span id="popupCategory"></span></p>
+        </div>
+      </div>
+    </section>
+    <hr />
+
+    <!-- task-5 -->
+    <p style="text-decoration: underline 2px">task-5</p>
+    <section>
+      <h2>Products</h2>
+
+      <div id="lul"></div>
+
+      <h2>🛒 Cart (<span id="count">0</span>)</h2>
+
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+          </tr>
+        </thead>
+
+        <tbody id="cart"></tbody>
+      </table>
+
+      <h3>Grand Total: ₹<span id="total">0</span></h3>
+    </section>
+
+    <script src="./main.js"></script>
+  </body>
 </html>
